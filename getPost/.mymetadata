@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="getPost"
+  id="myeclipse.1440408521460"
+  context-root="/getPost"
+  j2ee-spec="5.0"
+  archive="getPost.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
