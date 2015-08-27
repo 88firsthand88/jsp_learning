@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="pageContextTest"
+  id="myeclipse.1440585998062"
+  context-root="/pageContextTest"
+  j2ee-spec="5.0"
+  archive="pageContextTest.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

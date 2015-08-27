@@ -9,8 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'get.jsp' starting page</title>
-    
+    <title>My JSP 'index.jsp' starting page</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -19,23 +18,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
   </head>
   
   <body>
-  	<%request.setCharacterEncoding("utf-8");%>//表单传递参数可以解决中文乱码问题而url传递参数不能解决只能修改tomcat
-    <h1>request接受信息</h1>
-         用户名：<%=request.getParameter("username")%><br>
-         喜好：<%
-    	String[] val = request.getParameterValues("faviout");
-    	if (val != null) {
-    		for (int i = 0; i < val.length; i++) {
-    			out.print(val[i]);
-    			out.print("&nbsp&nbsp&nbsp");
-    		}
-    	}
-    %><br>
-    ip地址：<%=request.getRemoteAddr()%><br>    
-    字符编码方式：<%=request.getCharacterEncoding()%>
+    <h1>application内置对象</h1><hr>
+    <%
+    	application.setAttribute("name", "lili");
+    	application.setAttribute("password", "1234");
+    	application.setAttribute("faviout", "basketball");
+    	
+     %>
+     	用户名：<%=application.getAttribute("name") %><br>
+     <%
+     	Enumeration value = application.getAttributeNames();
+     	while(value.hasMoreElements()){
+     		out.println(value.nextElement()+"<br>");
+     	}
+      %>
+      <br>
+      服务器信息：<%=application.getServerInfo() %>
   </body>
 </html>
